@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:division/division.dart';
 
 class CustomButton extends StatelessWidget {
+  final IconData? icon;
+  final String label;
   final Color color;
   final double width;
   final double height;
+  final double margin;
 
   const CustomButton(
-      {this.color = const Color(0xFF7F5AF0),
+      {this.icon,
+      this.label = "Click ME!",
+      this.color = const Color(0xFF7F5AF0),
       this.width = 100,
-      this.height = 80});
+      this.height = 80,
+      this.margin = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +23,28 @@ class CustomButton extends StatelessWidget {
       style: ParentStyle()
         ..background.color(color)
         ..width(width)
-        ..height(height),
+        ..height(height)
+        ..borderRadius(all: 5)
+        ..margin(all: margin),
       child: Container(
-        child: Center(child: Text("Click ME!")),
+        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          (icon != null)
+              ? Icon(
+                  icon,
+                  color: Colors.white,
+                )
+              : Text(''),
+          SizedBox(
+            width: 8,
+          ),
+          Txt(
+            label,
+            style: TxtStyle()
+              ..fontSize(18)
+              ..fontWeight(FontWeight.w600)
+              ..textColor(Colors.white),
+          )
+        ]),
       ),
     );
   }
