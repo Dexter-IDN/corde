@@ -19,6 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Archivo',
+        textTheme: TextTheme()
+            .apply(bodyColor: appColor.white, displayColor: appColor.white),
         appBarTheme: AppBarTheme(
             backgroundColor: appColor.primary,
             elevation: 0,

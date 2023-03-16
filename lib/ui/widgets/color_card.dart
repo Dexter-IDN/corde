@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:division/division.dart';
 
 class ColorCard extends StatelessWidget {
-  final String? colorName;
-  final String? colorHex;
+  final String colorName;
+  final String colorHex;
   final int bgColor;
 
-  const ColorCard({this.colorName, this.colorHex, this.bgColor = 0xFFFFFFFF});
+  const ColorCard(
+      {this.colorName = "No Name",
+      this.colorHex = "OxFFFFFFFF",
+      this.bgColor = 0xFFFFFFFF});
 
   @override
   Widget build(BuildContext context) {
@@ -15,20 +18,22 @@ class ColorCard extends StatelessWidget {
           ..background.color(Color(bgColor))
           ..borderRadius(all: 5),
         child: Container(
+          height: 400,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Txt(
-                colorName!,
+                colorName,
                 style: TxtStyle()
-                  ..fontSize(14)
+                  ..fontSize(15)
+                  ..fontWeight(FontWeight.w500)
                   ..margin(bottom: 5),
               ),
               Txt(
-                colorHex!,
+                colorHex,
                 style: TxtStyle()
-                  ..fontSize(18)
-                  ..fontWeight(FontWeight.w300),
+                  ..fontSize(19)
+                  ..fontWeight(FontWeight.w600),
               ),
             ],
           ),
