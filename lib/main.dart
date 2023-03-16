@@ -1,3 +1,4 @@
+import 'package:corde/ui/pages/saved_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
                 TextStyle(color: appColor.white, fontWeight: FontWeight.bold),
           ),
         )),
-        body: const ColorScanner(),
+        body: const SavedColor(),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
