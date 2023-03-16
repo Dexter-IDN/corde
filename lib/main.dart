@@ -1,6 +1,5 @@
 import 'package:corde/ui/pages/saved_color.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'ui/style/app_color.dart';
 import 'ui/pages/color_scanner.dart';
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.archivoTextTheme(),
+        fontFamily: 'Archivo',
         appBarTheme: AppBarTheme(
             backgroundColor: appColor.primary,
             elevation: 0,
