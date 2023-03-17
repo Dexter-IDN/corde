@@ -7,7 +7,7 @@ class ShadesCard extends StatelessWidget {
   final String colorHex;
 
   const ShadesCard(
-      {this.width = 100, this.height = 100, this.colorHex = "0xFFFFFFFF"});
+      {this.width = 100, this.height = 60, this.colorHex = "0xFFFFFFFF"});
 
   @override
   Widget build(BuildContext context) {

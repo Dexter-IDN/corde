@@ -4,17 +4,25 @@ import 'package:division/division.dart';
 class CustomButton extends StatelessWidget {
   final IconData? icon;
   final String label;
+  final Color labelColor;
   final Color color;
   final double width;
   final double height;
+  final double border;
+  final Color borderColor;
+  final double opacity;
   final double margin;
 
   const CustomButton(
       {this.icon,
       this.label = "Click ME!",
+      this.labelColor = const Color(0xFFFFFFFF),
       this.color = const Color(0xFF7F5AF0),
       this.width = 100,
       this.height = 80,
+      this.border = 0,
+      this.borderColor = Colors.black,
+      this.opacity = 1,
       this.margin = 0});
 
   @override
@@ -25,6 +33,8 @@ class CustomButton extends StatelessWidget {
         ..width(width)
         ..height(height)
         ..borderRadius(all: 5)
+        ..border(all: border, color: borderColor)
+        ..opacity(opacity)
         ..margin(all: margin),
       child: Container(
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -42,7 +52,7 @@ class CustomButton extends StatelessWidget {
             style: TxtStyle()
               ..fontSize(18)
               ..fontWeight(FontWeight.w600)
-              ..textColor(Colors.white),
+              ..textColor(labelColor),
           )
         ]),
       ),
