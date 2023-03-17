@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../style/app_color.dart';
 import '../widgets/color_card.dart';
+import '../widgets/shades_card.dart';
 
 class ColorDetail extends StatelessWidget {
   const ColorDetail({super.key});
@@ -37,6 +38,9 @@ class ColorDetail extends StatelessWidget {
           ColorCard(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.2,
+          ),
+          ShadesCard(
+            width: MediaQuery.of(context).size.width,
           ),
         ],
       ),
