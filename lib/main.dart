@@ -1,8 +1,9 @@
-import 'package:corde/ui/pages/saved_color.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/style/app_color.dart';
 import 'ui/pages/color_scanner.dart';
+import 'ui/pages/saved_color.dart';
+import 'ui/pages/color_detail.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,20 +19,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Archivo',
-        textTheme: TextTheme()
-            .apply(bodyColor: appColor.white, displayColor: appColor.white),
-        appBarTheme: AppBarTheme(
-            backgroundColor: appColor.primary,
-            elevation: 0,
-            scrolledUnderElevation: 0),
-        scaffoldBackgroundColor: appColor.primary,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: appColor.black,
-          selectedItemColor: appColor.highlight,
-          unselectedItemColor: appColor.secondary,
-        ),
-      ),
+          fontFamily: 'Archivo',
+          textTheme: TextTheme()
+              .apply(bodyColor: appColor.white, displayColor: appColor.white),
+          appBarTheme: AppBarTheme(
+              backgroundColor: appColor.primary,
+              elevation: 0,
+              scrolledUnderElevation: 0),
+          scaffoldBackgroundColor: appColor.primary,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: appColor.black,
+            selectedItemColor: appColor.highlight,
+            unselectedItemColor: appColor.secondary,
+          ),
+          splashColor: Colors.transparent),
       home: Scaffold(
         appBar: AppBar(
             title: Center(
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
                 TextStyle(color: appColor.white, fontWeight: FontWeight.bold),
           ),
         )),
-        body: const SavedColor(),
+        body: const ColorDetail(),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(

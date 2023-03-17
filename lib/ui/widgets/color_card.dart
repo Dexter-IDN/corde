@@ -4,21 +4,24 @@ import 'package:division/division.dart';
 class ColorCard extends StatelessWidget {
   final String colorName;
   final String colorHex;
-  final int bgColor;
+  final double width;
+  final double height;
 
   const ColorCard(
       {this.colorName = "No Name",
-      this.colorHex = "OxFFFFFFFF",
-      this.bgColor = 0xFFFFFFFF});
+      this.colorHex = "0xFFFFFFFF",
+      this.width = 100,
+      this.height = 100});
 
   @override
   Widget build(BuildContext context) {
     return Parent(
         style: ParentStyle()
-          ..background.color(Color(bgColor))
+          ..background.color(Color(int.parse(colorHex)))
           ..borderRadius(all: 5),
         child: Container(
-          height: 400,
+          width: width,
+          height: height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -36,32 +36,26 @@ class SavedColor extends StatelessWidget {
                   ColorCard(
                     colorName: "Higlight",
                     colorHex: "0xFF7F5AF0",
-                    bgColor: 0xFF7F5AF0,
                   ),
                   ColorCard(
                     colorName: "Accent Green",
                     colorHex: "0xFF2CB67D",
-                    bgColor: 0xFF2CB67D,
                   ),
                   ColorCard(
                     colorName: "Accent Green",
                     colorHex: "0xFF2CB67D",
-                    bgColor: 0xFF2CB67D,
                   ),
                   ColorCard(
                     colorName: "Higlight",
                     colorHex: "0xFF7F5AF0",
-                    bgColor: 0xFF7F5AF0,
                   ),
                   ColorCard(
                     colorName: "Higlight",
                     colorHex: "0xFF7F5AF0",
-                    bgColor: 0xFF7F5AF0,
                   ),
                   ColorCard(
                     colorName: "Accent Green",
                     colorHex: "0xFF2CB67D",
-                    bgColor: 0xFF2CB67D,
                   ),
                 ],
               )
