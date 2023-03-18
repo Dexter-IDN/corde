@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
                 TextStyle(color: appColor.white, fontWeight: FontWeight.bold),
           ),
         )),
-        body: const ColorScanner(),
+        body: const ColorDetection(),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
