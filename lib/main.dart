@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'ui/style/app_color.dart';
-import 'ui/pages/color_scanner.dart';
+import 'ui/pages/color_detection.dart';
 import 'ui/pages/saved_color.dart';
 import 'ui/pages/color_detail.dart';
 
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
                 TextStyle(color: appColor.white, fontWeight: FontWeight.bold),
           ),
         )),
-        body: const ColorDetail(),
+        body: const ColorScanner(),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
