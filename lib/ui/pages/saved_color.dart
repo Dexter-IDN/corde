@@ -4,7 +4,7 @@ import '../style/app_color.dart';
 import '../widgets/color_card.dart';
 
 class SavedColor extends StatelessWidget {
-  const SavedColor({super.key});
+  const SavedColor();
 
   @override
   Widget build(BuildContext context) {

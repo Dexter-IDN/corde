@@ -7,7 +7,7 @@ import '../widgets/shades_card.dart';
 import '../widgets/custom_dsc.dart';
 
 class ColorDetail extends StatelessWidget {
-  const ColorDetail({super.key});
+  const ColorDetail();
 
   @override
   Widget build(BuildContext context) {

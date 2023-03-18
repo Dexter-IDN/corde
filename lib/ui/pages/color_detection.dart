@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:color_picker_camera/color_picker_camera.dart';
 
 import '../style/app_color.dart';
 import '../widgets/custom_button.dart';
 
 class ColorScanner extends StatelessWidget {
-  const ColorScanner({super.key});
+  const ColorScanner();
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,9 @@ class ColorScanner extends StatelessWidget {
           margin: 10,
           icon: Icons.photo_camera_rounded,
           label: "Camera",
+          onTap: () async {
+            String colorCode = await ColorPickerCamera.captureColorFromCamera;
+          },
         ),
         CustomButton(
           width: MediaQuery.of(context).size.width / 2,

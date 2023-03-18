@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:division/division.dart';
+import 'package:get/get_utils/get_utils.dart';
 
 class CustomButton extends StatelessWidget {
-  final IconData? icon;
+  final IconData icon;
   final String label;
   final Color labelColor;
   final Color color;
@@ -12,6 +13,7 @@ class CustomButton extends StatelessWidget {
   final Color borderColor;
   final double opacity;
   final double margin;
+  final Function() onTap;
 
   const CustomButton(
       {this.icon,
@@ -23,7 +25,8 @@ class CustomButton extends StatelessWidget {
       this.border = 0,
       this.borderColor = Colors.black,
       this.opacity = 1,
-      this.margin = 0});
+      this.margin = 0,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +59,7 @@ class CustomButton extends StatelessWidget {
           )
         ]),
       ),
+      gesture: Gestures()..onTap(onTap),
     );
   }
 }
