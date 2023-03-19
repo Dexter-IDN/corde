@@ -35,9 +35,6 @@ class ColorDetection extends StatelessWidget {
             colorlist.colorHex.value = colorCode;
             colorlist.colorList.addIf((colorlist.colorHex.value == colorCode),
                 colorlist.colorHex.value);
-            if (colorlist.colorList.isNotEmpty) {
-              print(colorlist.colorList.elementAt(0));
-            }
           },
         ),
         CustomButton(

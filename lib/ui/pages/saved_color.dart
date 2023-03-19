@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../controller/color_list.dart';
 import '../style/app_color.dart';
 import '../widgets/color_card.dart';
 
@@ -9,6 +10,7 @@ class SavedColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppColor appColor = AppColor();
+    ColorList colorList = ColorList();
 
     return ListView(
       children: [

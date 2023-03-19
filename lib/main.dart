@@ -17,6 +17,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     AppColor appColor = AppColor();
 
+    final _selectedIndex = 0.obs;
+    const List<Widget> _pageList = <Widget>[
+      ColorDetection(),
+      SavedColor(),
+    ];
+
+    void _onItemTapped(int index) {
+      _selectedIndex.value = index;
+    }
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -43,14 +53,19 @@ class MyApp extends StatelessWidget {
                 TextStyle(color: appColor.white, fontWeight: FontWeight.bold),
           ),
         )),
-        body: const ColorDetection(),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.colorize_rounded), label: 'Picker'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.image_rounded), label: 'Color')
-          ],
+        body: Obx(() => _pageList.elementAt(_selectedIndex.value)),
+        bottomNavigationBar: Obx(
+          () => BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.colorize_rounded), label: 'Picker'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.palette_rounded), label: 'Color')
+            ],
+            currentIndex: _selectedIndex.value,
+            showUnselectedLabels: true,
+            onTap: _onItemTapped,
+          ),
         ),
       ),
     );
