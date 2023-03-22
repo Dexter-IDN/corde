@@ -8,7 +8,7 @@ import '../style/app_color.dart';
 import '../widgets/custom_button.dart';
 
 class ColorDetection extends StatelessWidget {
-  const ColorDetection();
+  const ColorDetection({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
