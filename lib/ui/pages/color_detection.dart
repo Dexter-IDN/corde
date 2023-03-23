@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 import 'package:color_picker_camera/color_picker_camera.dart';
 
@@ -18,7 +19,7 @@ class ColorDetection extends StatelessWidget {
     return Center(
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(
-          "Take Color From",
+          'Take Color From',
           style: TextStyle(
               color: appColor.accent2,
               fontSize: 17,
@@ -32,9 +33,7 @@ class ColorDetection extends StatelessWidget {
           label: "Camera",
           onTap: () async {
             String colorCode = await ColorPickerCamera.captureColorFromCamera;
-            colorlist.colorHex.value = colorCode;
-            colorlist.colorList.addIf((colorlist.colorHex.value == colorCode),
-                colorlist.colorHex.value);
+            colorlist.SaveColor(colorCode);
           },
         ),
         CustomButton(
@@ -43,7 +42,7 @@ class ColorDetection extends StatelessWidget {
           color: appColor.accent1,
           icon: Icons.image_rounded,
           label: "Galery",
-        )
+        ),
       ]),
     );
   }

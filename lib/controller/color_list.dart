@@ -1,10 +1,20 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_color_models/flutter_color_models.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ColorList {
   final colorHex = ''.obs;
-  final index = 0.obs;
+  RxList savedColor = <String>[].obs;
 
-  List<String> colorList = [];
+  void SaveColor(String color) async {
+    savedColor.add(color);
+
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setStringList('colors', savedColor());
+  }
+
+  Future<List<String>> LoadColors() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+
+    return pref.getStringList('colors');
+  }
 }
