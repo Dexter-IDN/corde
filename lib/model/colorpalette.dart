@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class ColorPalette {
   String _baseColor;
 
@@ -35,5 +37,12 @@ class ColorPalette {
     var newG = (rgb[1] * factor).round();
     var newB = (rgb[2] * factor).round();
     return [newR, newG, newB];
+  }
+
+  bool isDarkColor(String hexColor) {
+    var color = Color(int.parse(hexColor.replaceFirst('#', ''), radix: 16));
+    var brightness =
+        (color.red * 299 + color.green * 587 + color.blue * 114) / 1000;
+    return brightness < 130;
   }
 }
