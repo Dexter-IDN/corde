@@ -33,7 +33,7 @@ class ColorCard extends StatelessWidget {
                   ..margin(bottom: 5),
               ),
               Txt(
-                colorHex,
+                "#${colorHex.substring(4)}",
                 style: TxtStyle()
                   ..fontSize(19)
                   ..fontWeight(FontWeight.w600),

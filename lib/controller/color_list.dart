@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ColorList {
   final colorHex = ''.obs;
+  final colorIndex = 0.obs;
   RxList savedColor = <String>[].obs;
 
   void SaveColor(String color) async {

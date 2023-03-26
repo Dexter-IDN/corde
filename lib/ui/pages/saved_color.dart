@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:colornames/colornames.dart';
 import 'package:get/get.dart';
 
+import 'color_detail.dart';
+
 import '../../controller/color_list.dart';
 import '../style/app_color.dart';
 import '../widgets/color_card.dart';
@@ -57,11 +59,20 @@ class _SavedColorState extends State<SavedColor> {
                         padding: EdgeInsets.only(top: 15),
                         itemCount: colorList.savedColor.length,
                         itemBuilder: (context, index) {
-                          return ColorCard(
-                            // colorHex: colors.elementAt(index).toString(),
-                            colorName: ColorNames.guess(Color(int.parse(
-                                colorList.savedColor.elementAt(index)))),
-                            colorHex: colorList.savedColor.elementAt(index),
+                          return GestureDetector(
+                            onTap: () {
+                              colorList.colorHex.value =
+                                  colorList.savedColor.elementAt(index);
+                              colorList.colorIndex.value = index;
+                              Get.to(const ColorDetail());
+
+                              setState(() {});
+                            },
+                            child: ColorCard(
+                              colorName: ColorNames.guess(Color(int.parse(
+                                  colorList.savedColor.elementAt(index)))),
+                              colorHex: colorList.savedColor.elementAt(index),
+                            ),
                           );
                         },
                       ),
