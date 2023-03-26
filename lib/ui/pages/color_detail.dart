@@ -110,7 +110,7 @@ class ColorDetail extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 64),
+              margin: EdgeInsets.only(bottom: 42),
               child: CustomDsc(
                 label: "HSL",
                 dsc: hsl,
