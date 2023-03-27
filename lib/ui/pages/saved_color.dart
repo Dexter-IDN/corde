@@ -22,7 +22,7 @@ class _SavedColorState extends State<SavedColor> {
 
     ColorList colorlist = Get.put(ColorList());
     colorlist.LoadColors().then((color) {
-      colorlist.savedColor = List.from(color);
+      colorlist.savedColor = RxList.from(color);
     });
   }
 
@@ -62,6 +62,7 @@ class _SavedColorState extends State<SavedColor> {
                         colorList.colorHex.value =
                             colorList.savedColor.elementAt(index);
                         colorList.colorIndex.value = index;
+
                         Get.to(() => ColorDetail());
 
                         setState(() {});

@@ -126,6 +126,7 @@ class ColorDetail extends StatelessWidget {
               labelColor: Color(0xFFD64C3D),
               onTap: () {
                 colorList.savedColor.removeAt(colorList.colorIndex.value);
+                colorList.SaveColors();
                 Get.back();
               },
             )

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     AppColor appColor = AppColor();
 
     final _selectedIndex = 0.obs;
-    const List<Widget> _pageList = <Widget>[
+    const List<Widget> _pageList = [
       ColorDetection(),
       SavedColor(),
     ];

@@ -10,7 +10,12 @@ class ColorList {
     savedColor.add(color);
 
     final SharedPreferences pref = await SharedPreferences.getInstance();
-    pref.setStringList('colors', savedColor());
+    pref.setStringList('colors', List<String>.from(savedColor));
+  }
+
+  void SaveColors() async {
+    final SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setStringList('colors', List<String>.from(savedColor));
   }
 
   Future<List<String>> LoadColors() async {

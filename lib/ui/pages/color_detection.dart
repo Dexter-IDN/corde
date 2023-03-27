@@ -36,13 +36,13 @@ class ColorDetection extends StatelessWidget {
             colorlist.SaveColor(colorCode);
           },
         ),
-        CustomButton(
-          width: MediaQuery.of(context).size.width / 2,
-          height: MediaQuery.of(context).size.height * 0.075,
-          color: appColor.accent1,
-          icon: Icons.image_rounded,
-          label: "Galery",
-        ),
+        // CustomButton(
+        //   width: MediaQuery.of(context).size.width / 2,
+        //   height: MediaQuery.of(context).size.height * 0.075,
+        //   color: appColor.accent1,
+        //   icon: Icons.image_rounded,
+        //   label: "Galery",
+        // ),
       ]),
     );
   }
