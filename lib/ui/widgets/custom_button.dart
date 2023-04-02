@@ -1,6 +1,7 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:division/division.dart';
-import 'package:get/get_utils/get_utils.dart';
 
 class CustomButton extends StatelessWidget {
   final IconData icon;
@@ -39,6 +40,8 @@ class CustomButton extends StatelessWidget {
         ..border(all: border, color: borderColor)
         ..opacity(opacity)
         ..margin(all: margin),
+      gesture: Gestures()..onTap(onTap),
+      // ignore: avoid_unnecessary_containers
       child: Container(
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           (icon != null)
@@ -59,7 +62,6 @@ class CustomButton extends StatelessWidget {
           )
         ]),
       ),
-      gesture: Gestures()..onTap(onTap),
     );
   }
 }

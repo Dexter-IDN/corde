@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:colornames/colornames.dart';
 import 'package:get/get.dart';
@@ -5,31 +7,15 @@ import 'package:get/get.dart';
 import 'color_detail.dart';
 
 import '../../controller/color_list.dart';
-import '../style/app_color.dart';
 import '../widgets/color_card.dart';
 
-class SavedColor extends StatefulWidget {
-  const SavedColor();
-
-  @override
-  State<SavedColor> createState() => _SavedColorState();
-}
-
-class _SavedColorState extends State<SavedColor> {
-  @override
-  void initState() {
-    super.initState();
-
-    ColorList colorlist = Get.put(ColorList());
-    colorlist.LoadColors().then((color) {
-      colorlist.savedColor = RxList.from(color);
-    });
-  }
+class SavedColor extends StatelessWidget {
+  const SavedColor({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    AppColor appColor = AppColor();
     ColorList colorList = Get.put(ColorList());
+
     return ListView(
       children: [
         Padding(
@@ -64,8 +50,6 @@ class _SavedColorState extends State<SavedColor> {
                         colorList.colorIndex.value = index;
 
                         Get.to(() => ColorDetail());
-
-                        setState(() {});
                       },
                       child: ColorCard(
                         colorName: ColorNames.guess(Color(

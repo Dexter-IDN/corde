@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+// ignore: depend_on_referenced_packages
 import 'package:color_models/color_models.dart';
 import 'package:colornames/colornames.dart';
 
@@ -13,7 +16,7 @@ import '../widgets/shades_card.dart';
 import '../widgets/custom_dsc.dart';
 
 class ColorDetail extends StatelessWidget {
-  const ColorDetail();
+  const ColorDetail({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

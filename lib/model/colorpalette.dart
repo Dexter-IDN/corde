@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColorPalette {
-  String _baseColor;
+  final String _baseColor;
 
   ColorPalette(this._baseColor);
 

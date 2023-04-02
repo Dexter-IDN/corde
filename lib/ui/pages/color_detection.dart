@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 import 'package:color_picker_camera/color_picker_camera.dart';
 
@@ -8,8 +7,23 @@ import '../../controller/color_list.dart';
 import '../style/app_color.dart';
 import '../widgets/custom_button.dart';
 
-class ColorDetection extends StatelessWidget {
+class ColorDetection extends StatefulWidget {
   const ColorDetection({Key key}) : super(key: key);
+
+  @override
+  State<ColorDetection> createState() => _ColorDetectionState();
+}
+
+class _ColorDetectionState extends State<ColorDetection> {
+  @override
+  void initState() {
+    super.initState();
+
+    ColorList colorlist = Get.put(ColorList());
+    colorlist.LoadColors().then((color) {
+      colorlist.savedColor = RxList.from(color);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
